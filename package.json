@@ -1,0 +1,32 @@
+{
+  "name": "farmers-marketplace",
+  "version": "1.0.0",
+  "description": "Local Farmers' Direct Marketplace - Connecting smallholder farmers with buyers",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "test": "npm run test:server && npm run test:client",
+    "test:client": "cd client && npm run test",
+    "test:server": "cd server && npm run test",
+    "test:e2e": "cd client && npm run test:e2e",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "seed": "cd server && npm run seed",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
